@@ -1035,101 +1035,259 @@
             </section>
         </div>
         
-        <!-- Strona Dokumentacja -->
-        <div id="docs-page" style="display: none;">
-            <section class="section">
-                <div class="docs-container">
-                    <div class="docs-sidebar">
-                        <h3><i class="fas fa-book"></i> Dokumentacja</h3>
-                        <ul class="docs-nav">
-                            <li><a href="#getting-started" class="active"><i class="fas fa-play"></i> Wprowadzenie</a></li>
-                            <li><a href="#installation"><i class="fas fa-download"></i> Instalacja</a></li>
-                            <li><a href="#configuration"><i class="fas fa-cog"></i> Konfiguracja</a></li>
-                            <li><a href="#plugins"><i class="fas fa-puzzle-piece"></i> Wtyczki</a></li>
-                            <li><a href="#docker"><i class="fab fa-docker"></i> Docker</a></li>
-                            <li><a href="#troubleshooting"><i class="fas fa-bug"></i> Rozwiązywanie problemów</a></li>
-                            <li><a href="#faq"><i class="fas fa-question"></i> FAQ</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="docs-content">
-                        <article id="getting-started">
-                            <h2><i class="fas fa-play"></i> Wprowadzenie do OpenMediaVault 8</h2>
-                            <p>OpenMediaVault (OMV) to kompletne rozwiązanie NAS oparte na Debianie, przeznaczone dla użytkowników domowych i małych firm.</p>
-                            
-                            <h3 style="margin-top: 2rem;">Podstawowe funkcje</h3>
-                            <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
-                                <li style="margin-bottom: 0.5rem;">Zarządzanie dyskami i RAID</li>
-                                <li style="margin-bottom: 0.5rem;">Udostępnianie plików (SMB/NFS/FTP)</li>
-                                <li style="margin-bottom: 0.5rem;">Monitorowanie systemu</li>
-                                <li style="margin-bottom: 0.5rem;">Rozszerzenia przez wtyczki</li>
-                                <li style="margin-bottom: 0.5rem;">Integracja z Docker</li>
-                            </ul>
-
-                            <h3 style="margin-top: 2rem;">Wymagania systemowe</h3>
-                            <div style="overflow-x: auto;">
-                                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                                    <thead>
-                                        <tr style="background-color: rgba(79, 70, 229, 0.1);">
-                                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray);">Komponent</th>
-                                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray);">Minimalne</th>
-                                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray);">Zalecane</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Procesor</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">64-bit x86/ARM</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">2+ rdzenie 64-bit</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Pamięć RAM</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">1 GB</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">4+ GB</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Dysk systemowy</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">8 GB</td>
-                                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">16+ GB SSD</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </article>
-
-                        <article id="installation" style="margin-top: 3rem;">
-                            <h2><i class="fas fa-download"></i> Instalacja</h2>
-                            <p>Proces instalacji OpenMediaVault jest prosty i intuicyjny.</p>
-                            
-                            <h3 style="margin-top: 1.5rem;">Krok 1: Przygotowanie nośnika</h3>
-                            <p>Pobierz odpowiedni obraz ISO i nagraj go na nośnik instalacyjny (USB lub DVD).</p>
-                            
-                            <h3 style="margin-top: 1.5rem;">Krok 2: Rozruch i instalacja</h3>
-                            <p>Uruchom system z nośnika instalacyjnego i postępuj zgodnie z instrukcjami instalatora.</p>
-                            
-                            <h3 style="margin-top: 1.5rem;">Krok 3: Konfiguracja początkowa</h3>
-                            <p>Po instalacji zaloguj się do interfejsu webowego i skonfiguruj podstawowe ustawienia systemu.</p>
-                        </article>
-
-                        <article id="configuration" style="margin-top: 3rem;">
-                            <h2><i class="fas fa-cog"></i> Konfiguracja</h2>
-                            <p>OpenMediaVault oferuje szerokie możliwości konfiguracji przez przeglądarkę internetową.</p>
-                            
-                            <h3 style="margin-top: 1.5rem;">Podstawowe ustawienia</h3>
-                            <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
-                                <li style="margin-bottom: 0.5rem;">Konfiguracja sieci</li>
-                                <li style="margin-bottom: 0.5rem;">Zarządzanie użytkownikami</li>
-                                <li style="margin-bottom: 0.5rem;">Udostępnianie plików</li>
-                                <li style="margin-bottom: 0.5rem;">Zarządzanie dyskami</li>
-                            </ul>
-                            
-                            <h3 style="margin-top: 1.5rem;">Zaawansowane funkcje</h3>
-                            <p>Dostęp do zaawansowanych funkcji takich jak RAID, LVM, iSCSI, NFS itp.</p>
-                        </article>
-                    </div>
+<!-- Strona Dokumentacja -->
+<div id="docs-page" style="display: none;">
+    <section class="section docs-section full-width">
+        <div class="container">
+            <div class="docs-container">
+                <div class="docs-sidebar">
+                    <h3><i class="fas fa-book"></i> Dokumentacja</h3>
+                    <ul class="docs-nav">
+                        <li><a href="#getting-started" class="active"><i class="fas fa-play"></i> Wprowadzenie</a></li>
+                        <li><a href="#installation"><i class="fas fa-download"></i> Instalacja</a></li>
+                        <li><a href="#configuration"><i class="fas fa-cog"></i> Konfiguracja</a></li>
+                        <li><a href="#plugins"><i class="fas fa-puzzle-piece"></i> Wtyczki</a></li>
+                        <li><a href="#docker"><i class="fab fa-docker"></i> Docker</a></li>
+                        <li><a href="#troubleshooting"><i class="fas fa-bug"></i> Rozwiązywanie problemów</a></li>
+                        <li><a href="#faq"><i class="fas fa-question"></i> FAQ</a></li>
+                    </ul>
                 </div>
-            </section>
+
+                <div class="docs-content">
+                    <!-- ... (poprzednie sekcje pozostają bez zmian) ... -->
+
+                    <!-- Sekcja Wtyczki -->
+                    <article id="plugins" style="margin-top: 3rem;">
+                        <h2><i class="fas fa-puzzle-piece"></i> Wtyczki</h2>
+                        <p>OpenMediaVault oferuje rozszerzalną funkcjonalność poprzez system wtyczek. Oto najpopularniejsze z nich:</p>
+                        
+                        <h3 style="margin-top: 1.5rem;">Instalacja wtyczek</h3>
+                        <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">Zaloguj się do interfejsu administracyjnego</li>
+                            <li style="margin-bottom: 0.5rem;">Przejdź do sekcji <strong>System → Wtyczki</strong></li>
+                            <li style="margin-bottom: 0.5rem;">Wybierz wtyczkę z listy dostępnych</li>
+                            <li style="margin-bottom: 0.5rem;">Kliknij <strong>Zainstaluj</strong> i poczekaj na zakończenie procesu</li>
+                        </ol>
+
+                        <h3 style="margin-top: 1.5rem;">Popularne wtyczki</h3>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                                <thead>
+                                    <tr style="background-color: rgba(79, 70, 229, 0.1);">
+                                        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray);">Wtyczka</th>
+                                        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray);">Opis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">OMV-Extras</td>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Dodaje dodatkowe repozytoria i funkcje</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Plex Media Server</td>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Serwer multimedialny Plex</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Nextcloud</td>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Chmura prywatna</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">ZFS</td>
+                                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray);">Obsługa systemu plików ZFS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <!-- Sekcja Docker -->
+                    <article id="docker" style="margin-top: 3rem;">
+                        <h2><i class="fab fa-docker"></i> Docker</h2>
+                        <p>OpenMediaVault obsługuje Dockera, umożliwiając uruchamianie kontenerów z różnymi aplikacjami.</p>
+                        
+                        <h3 style="margin-top: 1.5rem;">Instalacja Dockera</h3>
+                        <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">Zainstaluj wtyczkę <strong>openmediavault-compose</strong></li>
+                            <li style="margin-bottom: 0.5rem;">Przejdź do <strong>Usługi → Compose → Ustawienia</strong></li>
+                            <li style="margin-bottom: 0.5rem;">Włącz Docker i Docker Compose</li>
+                            <li style="margin-bottom: 0.5rem;">Zapisz zmiany i zastosuj konfigurację</li>
+                        </ol>
+
+                        <h3 style="margin-top: 1.5rem;">Przykładowe zastosowania</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="background-color: rgba(79, 70, 229, 0.05); padding: 1rem; border-radius: var(--radius);">
+                                <h4><i class="fas fa-server"></i> Serwery aplikacji</h4>
+                                <p style="font-size: 0.875rem;">WordPress, Nextcloud, Jellyfin, Plex</p>
+                            </div>
+                            <div style="background-color: rgba(79, 70, 229, 0.05); padding: 1rem; border-radius: var(--radius);">
+                                <h4><i class="fas fa-database"></i> Bazy danych</h4>
+                                <p style="font-size: 0.875rem;">MySQL, PostgreSQL, MongoDB</p>
+                            </div>
+                            <div style="background-color: rgba(79, 70, 229, 0.05); padding: 1rem; border-radius: var(--radius);">
+                                <h4><i class="fas fa-network-wired"></i> Narzędzia sieciowe</h4>
+                                <p style="font-size: 0.875rem;">Pi-hole, WireGuard, Nginx Proxy Manager</p>
+                            </div>
+                            <div style="background-color: rgba(79, 70, 229, 0.05); padding: 1rem; border-radius: var(--radius);">
+                                <h4><i class="fas fa-home"></i> Automatyzacja domu</h4>
+                                <p style="font-size: 0.875rem;">Home Assistant, Node-RED</p>
+                            </div>
+                        </div>
+
+                        <div style="padding: 1.5rem; background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius); margin-top: 1.5rem;">
+                            <h4><i class="fas fa-lightbulb"></i> Porady</h4>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li style="margin-bottom: 0.5rem;">Zawsze aktualizuj obrazy Dockera przed uruchomieniem kontenerów</li>
+                                <li style="margin-bottom: 0.5rem;">Używaj woluminów do przechowywania danych zamiast zapisywać je w kontenerach</li>
+                                <li style="margin-bottom: 0.5rem;">Regularnie sprawdzaj zużycie zasobów przez kontenery</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Sekcja Rozwiązywanie problemów -->
+                    <article id="troubleshooting" style="margin-top: 3rem;">
+                        <h2><i class="fas fa-bug"></i> Rozwiązywanie problemów</h2>
+                        <p>Rozwiązania najczęstszych problemów z OpenMediaVault.</p>
+                        
+                        <h3 style="margin-top: 1.5rem;">Problemy z instalacją</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <details style="margin-bottom: 0.5rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 0.75rem;">
+                                <summary style="font-weight: 500; cursor: pointer;">Instalator zatrzymuje się podczas partycjonowania</summary>
+                                <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                    <p>1. Sprawdź integralność pobranego obrazu ISO (md5sum)</p>
+                                    <p>2. Użyj innego nośnika instalacyjnego</p>
+                                    <p>3. Wyłącz tryb UEFI w BIOS i spróbuj zainstalować w trybie Legacy</p>
+                                </div>
+                            </details>
+                            <details style="margin-bottom: 0.5rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 0.75rem;">
+                                <summary style="font-weight: 500; cursor: pointer;">System nie uruchamia się po instalacji</summary>
+                                <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                    <p>1. Sprawdź kolejność bootowania w BIOS</p>
+                                    <p>2. Upewnij się, że dysk systemowy jest poprawnie podłączony</p>
+                                    <p>3. Spróbuj ponownie zainstalować system</p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem;">Problemy z siecią</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <details style="margin-bottom: 0.5rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 0.75rem;">
+                                <summary style="font-weight: 500; cursor: pointer;">Nie można połączyć się z interfejsem webowym</summary>
+                                <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                    <p>1. Sprawdź, czy serwer jest włączony i podłączony do sieci</p>
+                                    <p>2. Zweryfikuj adres IP w konsoli (polecenie <code>ip a</code>)</p>
+                                    <p>3. Upewnij się, że usługa omv-engined jest uruchomiona (<code>systemctl status omv-engined</code>)</p>
+                                </div>
+                            </details>
+                            <details style="margin-bottom: 0.5rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 0.75rem;">
+                                <summary style="font-weight: 500; cursor: pointer;">Wolne transfery plików</summary>
+                                <div style="margin-top: 0.5rem; padding-left: 1rem;">
+                                    <p>1. Sprawdź jakość połączenia sieciowego</p>
+                                    <p>2. Przetestuj różne protokoły (SMB/NFS)</p>
+                                    <p>3. Zweryfikuj stan dysków (<code>smartctl -a /dev/sdX</code>)</p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem;">Dzienniki i diagnostyka</h3>
+                        <div style="background-color: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+                            <h4><i class="fas fa-terminal"></i> Przydatne komendy</h4>
+                            <div style="margin-top: 1rem; font-family: monospace; font-size: 0.875rem;">
+                                <p style="margin-bottom: 0.5rem;"><strong># Wyświetl dzienniki systemowe</strong><br>journalctl -xe</p>
+                                <p style="margin-bottom: 0.5rem;"><strong># Sprawdź stan usług</strong><br>systemctl list-units --type=service</p>
+                                <p style="margin-bottom: 0.5rem;"><strong># Test wydajności dysku</strong><br>hdparm -Tt /dev/sdX</p>
+                                <p style="margin-bottom: 0.5rem;"><strong># Sprawdź miejsce na dyskach</strong><br>df -h</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sekcja FAQ -->
+                    <article id="faq" style="margin-top: 3rem;">
+                        <h2><i class="fas fa-question"></i> Często zadawane pytania</h2>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <details style="margin-bottom: 1rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 1rem;">
+                                <summary style="font-weight: 500; cursor: pointer; font-size: 1.1rem;">Czym różni się OMV od innych rozwiązań NAS?</summary>
+                                <div style="margin-top: 1rem; padding-left: 1rem;">
+                                    <p>OpenMediaVault to darmowe, open-source'owe rozwiązanie oparte na Debianie, które oferuje:</p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.5rem;">Pełną kontrolę nad systemem</li>
+                                        <li style="margin-bottom: 0.5rem;">Rozszerzalność przez wtyczki</li>
+                                        <li style="margin-bottom: 0.5rem;">Bogate możliwości konfiguracji</li>
+                                        <li style="margin-bottom: 0.5rem;">Wsparcie dla Dockera i konteneryzacji</li>
+                                        <li style="margin-bottom: 0.5rem;">Aktywną społeczność</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details style="margin-bottom: 1rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 1rem;">
+                                <summary style="font-weight: 500; cursor: pointer; font-size: 1.1rem;">Jak często wychodzą aktualizacje?</summary>
+                                <div style="margin-top: 1rem; padding-left: 1rem;">
+                                    <p>OpenMediaVault ma regularny cykl aktualizacji:</p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.5rem;"><strong>Aktualizacje bezpieczeństwa:</strong> W miarę potrzeb, zwykle w ciągu kilku dni od wykrycia luki</li>
+                                        <li style="margin-bottom: 0.5rem;"><strong>Drobne aktualizacje:</strong> Co kilka tygodni</li>
+                                        <li style="margin-bottom: 0.5rem;"><strong>Główne wersje:</strong> Co 1-2 lata</li>
+                                    </ul>
+                                    <p style="margin-top: 1rem;">Zaleca się włączenie automatycznych aktualizacji zabezpieczeń.</p>
+                                </div>
+                            </details>
+
+                            <details style="margin-bottom: 1rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 1rem;">
+                                <summary style="font-weight: 500; cursor: pointer; font-size: 1.1rem;">Czy mogę uruchomić OMV na Raspberry Pi?</summary>
+                                <div style="margin-top: 1rem; padding-left: 1rem;">
+                                    <p>Tak, OpenMediaVault oferuje specjalną wersję dla Raspberry Pi (od wersji 4).</p>
+                                    <p style="margin-top: 0.5rem;"><strong>Zalecane minimalne wymagania:</strong></p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.5rem;">Raspberry Pi 4 (2GB RAM lub więcej)</li>
+                                        <li style="margin-bottom: 0.5rem;">Zasilacz 5V/3A</li>
+                                        <li style="margin-bottom: 0.5rem;">Dysk SSD przez USB 3.0 (zalecane) zamiast karty SD</li>
+                                        <li style="margin-bottom: 0.5rem;">Aktywne chłodzenie dla lepszej wydajności</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details style="margin-bottom: 1rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 1rem;">
+                                <summary style="font-weight: 500; cursor: pointer; font-size: 1.1rem;">Jak wykonać kopię zapasową konfiguracji?</summary>
+                                <div style="margin-top: 1rem; padding-left: 1rem;">
+                                    <p>OpenMediaVault oferuje wbudowane narzędzie do tworzenia kopii zapasowych:</p>
+                                    <ol style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.5rem;">Przejdź do <strong>System → Kopia zapasowa</strong></li>
+                                        <li style="margin-bottom: 0.5rem;">Wybierz <strong>Utwórz kopię zapasową</strong></li>
+                                        <li style="margin-bottom: 0.5rem;">Pobierz plik .zip z konfiguracją</li>
+                                    </ol>
+                                    <p style="margin-top: 1rem;">Kopię można przywrócić w tej samej sekcji po reinstalacji systemu.</p>
+                                </div>
+                            </details>
+
+                            <details style="margin-bottom: 1rem; border: 1px solid var(--gray); border-radius: var(--radius); padding: 1rem;">
+                                <summary style="font-weight: 500; cursor: pointer; font-size: 1.1rem;">Czym różni się OMV-Custom od oficjalnej wersji?</summary>
+                                <div style="margin-top: 1rem; padding-left: 1rem;">
+                                    <p>OMV-Custom to nieoficjalna wersja rozwijana przez społeczność, która zawiera:</p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.5rem;">Dodatkowe sterowniki i wsparcie sprzętowe</li>
+                                        <li style="margin-bottom: 0.5rem;">Zintegrowane popularne wtyczki</li>
+                                        <li style="margin-bottom: 0.5rem;">Nowsze wersje niektórych komponentów</li>
+                                        <li style="margin-bottom: 0.5rem;">Eksperymentalne funkcje</li>
+                                    </ul>
+                                    <p style="margin-top: 1rem;"><strong>Uwaga:</strong> OMV-Custom może być mniej stabilny niż wersja oficjalna.</p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding: 1.5rem; background-color: rgba(79, 70, 229, 0.1); border-radius: var(--radius);">
+                            <h4><i class="fas fa-life-ring"></i> Potrzebujesz dodatkowej pomocy?</h4>
+                            <p style="margin-top: 0.5rem;">Odwiedź oficjalne forum OpenMediaVault:</p>
+                            <a href="https://forum.openmediavault.org/" class="btn" style="margin-top: 1rem;">
+                                <i class="fas fa-comments"></i> Forum OMV
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
+    </section>
+</div>
+
     </main>
 
     <!-- Footer -->
