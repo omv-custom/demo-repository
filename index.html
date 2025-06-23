@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenMediaVault 8.0.4 - Nowoczesny system NAS</title>
+    <title>OpenMediaVault 8.0.5 - Nowoczesny system NAS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <style>
         :root {
@@ -691,6 +691,104 @@
             margin: 0 auto;
         }
 
+        /* Dodaj te style do istniejącego bloku <style> */
+        .screenshot {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        
+        #screenshot-dialog {
+            width: 90%;
+            max-width: 1200px;
+            border: none;
+            border-radius: var(--radius);
+            padding: 0;
+            background: transparent;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        #screenshot-dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .dialog-content {
+            position: relative;
+        }
+        
+        .dialog-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            display: block;
+        }
+        
+        .close-dialog {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .close-dialog:hover {
+            background-color: var(--primary);
+        }
+        
+        .dialog-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            transform: translateY(-50%);
+        }
+        
+        .dialog-nav button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .dialog-nav button:hover {
+            background-color: var(--primary);
+        }
+        
+        .dialog-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 2rem 1rem 1rem;
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+        }
+
         /* Responsywność */
         @media (max-width: 1200px) {
             .container, .container-wide {
@@ -885,24 +983,24 @@
             <section class="section screenshots full-width">
                 <div class="container-wide">
                     <div class="section-title">
-                        <h2>Nowy interfejs w wersji 8.0.4</h2>
+                        <h2>Nowy interfejs w wersji 8.0.5</h2>
                         <p>Zobacz jak wygląda najnowsza wersja OpenMediaVault z odświeżonym interfejsem użytkownika</p>
                     </div>
                     <div class="screenshot-container">
                         <div class="screenshot-slider">
-                            <div class="screenshot">
+                            <div class="screenshot" data-src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/dashboard.png" data-alt="OpenMediaVault 8 Dashboard">
                                 <img src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/dashboard.png" alt="OpenMediaVault 8 Dashboard">
                             </div>
-                            <div class="screenshot">
+                            <div class="screenshot" data-src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/storage.png" data-alt="OpenMediaVault 8 Storage Management">
                                 <img src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/storage.png" alt="OpenMediaVault 8 Storage Management">
                             </div>
-                            <div class="screenshot">
+                            <div class="screenshot" data-src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/services.png" data-alt="OpenMediaVault 8 Services">
                                 <img src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/services.png" alt="OpenMediaVault 8 Services">
                             </div>
-                            <div class="screenshot">
+                            <div class="screenshot" data-src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/plugins.png" data-alt="OpenMediaVault 8 Plugins">
                                 <img src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/plugins.png" alt="OpenMediaVault 8 Plugins">
                             </div>
-                            <div class="screenshot">
+                            <div class="screenshot" data-src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/brak_aktywnosci.png" data-alt="OpenMediaVault 8 Session Expired">
                                 <img src="https://raw.githubusercontent.com/omv-custom/demo-repository/refs/heads/main/screen/brak_aktywnosci.png" alt="OpenMediaVault 8 Session Expired">
                             </div>
                         </div>
@@ -1493,6 +1591,77 @@
                 });
             });
         });
+
+        // Screenshot gallery functionality
+        const dialog = document.getElementById('screenshot-dialog');
+        const dialogImage = dialog.querySelector('.dialog-image');
+        const dialogCaption = dialog.querySelector('.dialog-caption');
+        const closeButton = dialog.querySelector('.close-dialog');
+        const prevButton = dialog.querySelector('.prev-btn');
+        const nextButton = dialog.querySelector('.next-btn');
+        const screenshots = document.querySelectorAll('.screenshot');
+        
+        let currentIndex = 0;
+        
+        // Open dialog with clicked image
+        screenshots.forEach((screenshot, index) => {
+            screenshot.addEventListener('click', () => {
+                currentIndex = index;
+                updateDialog();
+                dialog.showModal();
+            });
+        });
+        
+        // Close dialog
+        closeButton.addEventListener('click', () => {
+            dialog.close();
+        });
+        
+        // Navigation
+        prevButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+            updateDialog();
+        });
+        
+        nextButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % screenshots.length;
+            updateDialog();
+        });
+        
+        // Keyboard navigation
+        dialog.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+                updateDialog();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % screenshots.length;
+                updateDialog();
+            } else if (e.key === 'Escape') {
+                dialog.close();
+            }
+        });
+        
+        // Update dialog content
+        function updateDialog() {
+            const currentScreenshot = screenshots[currentIndex];
+            dialogImage.src = currentScreenshot.dataset.src;
+            dialogImage.alt = currentScreenshot.dataset.alt;
+            dialogCaption.textContent = currentScreenshot.dataset.alt;
+        }
     </script>
+
+    <dialog id="screenshot-dialog">
+        <div class="dialog-content">
+            <button class="close-dialog" aria-label="Zamknij">&times;</button>
+            <img class="dialog-image" src="" alt="">
+            <div class="dialog-nav">
+                <button class="prev-btn" aria-label="Poprzedni">&larr;</button>
+                <button class="next-btn" aria-label="Następny">&rarr;</button>
+            </div>
+            <div class="dialog-caption"></div>
+        </div>
+    </dialog>
 </body>
 </html>
