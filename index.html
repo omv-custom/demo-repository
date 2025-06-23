@@ -1440,6 +1440,19 @@
         </div>
     </footer>
 
+
+    <dialog id="screenshot-dialog">
+        <div class="dialog-content">
+            <button class="close-dialog" aria-label="Zamknij">&times;</button>
+            <img class="dialog-image" src="" alt="">
+            <div class="dialog-nav">
+                <button class="prev-btn" aria-label="Poprzedni">&larr;</button>
+                <button class="next-btn" aria-label="Następny">&rarr;</button>
+            </div>
+            <div class="dialog-caption"></div>
+        </div>
+    </dialog>
+    
     <script>
         // Przełącznik motywu
         const themeToggle = document.getElementById('theme-toggle');
@@ -1651,17 +1664,5 @@
             dialogCaption.textContent = currentScreenshot.dataset.alt;
         }
     </script>
-
-    <dialog id="screenshot-dialog">
-        <div class="dialog-content">
-            <button class="close-dialog" aria-label="Zamknij">&times;</button>
-            <img class="dialog-image" src="" alt="">
-            <div class="dialog-nav">
-                <button class="prev-btn" aria-label="Poprzedni">&larr;</button>
-                <button class="next-btn" aria-label="Następny">&rarr;</button>
-            </div>
-            <div class="dialog-caption"></div>
-        </div>
-    </dialog>
 </body>
 </html>
