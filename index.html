@@ -64,6 +64,13 @@
             color: var(--text-color);
         }
 
+       .center {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
         h1 { font-size: 2.5rem; }
         h2 { font-size: 2rem; }
         h3 { font-size: 1.5rem; }
@@ -1441,7 +1448,7 @@
     </footer>
 
 
-    <dialog id="screenshot-dialog">
+    <dialog id="screenshot-dialog" class="center">
         <div class="dialog-content">
             <button class="close-dialog" aria-label="Zamknij">&times;</button>
             <img class="dialog-image" src="" alt="">
